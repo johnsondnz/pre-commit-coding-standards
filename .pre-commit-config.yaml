@@ -38,7 +38,7 @@ repos:
         name: flake8 (PEP8 Checker)
 
   - repo: git@github.com:johnsondnz/pre-commit-coding-standards.git
-    rev: v1.0.7
+    rev: v1.1.0
     hooks:
       - id: coding-standards
 

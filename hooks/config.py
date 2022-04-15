@@ -7,5 +7,4 @@ FILES = (
     (".gitattributes", "templates/gitattributes_template"),
     ("pyproject.toml", "templates/pyproject_template"),
     (".vscode/settings.json", "templates/vscode_settings_template"),
-    (".pre-commit-config.yaml", "templates/pre_commit_config_template"),
 )
