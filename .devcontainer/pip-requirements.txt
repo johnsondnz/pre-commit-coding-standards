@@ -1,0 +1,4 @@
+logzero
+pytest
+ansible
+GitPython
