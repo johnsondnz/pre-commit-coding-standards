@@ -9,6 +9,7 @@ import difflib
 from pathlib import Path
 import sys
 import pkgutil
+from hooks.config import FILES
 
 DOCUMENTATION = """
 Ensures that files related to coding standards are consistent with pre-defined templates.
@@ -44,14 +45,7 @@ def _coding_standards():
     Returns: bool
     """
     error = False
-    files = (
-        (".gitignore", "templates/gitignore_template"),
-        (".flake8", "templates/flake8_template"),
-        (".editorconfig", "templates/editorconfig_template"),
-        (".gitattributes", "templates/gitattributes_template"),
-        ("pyproject.toml", "templates/pyproject_template"),
-        (".vscode/settings.json", "templates/vscode_settings_template"),
-    )
+    files = FILES
 
     differences = []
     files_modified = []
