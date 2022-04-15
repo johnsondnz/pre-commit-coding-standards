@@ -13,7 +13,7 @@ PROJECT_AUTHOR = "@johnsondnz"
 PROJECT_COPYRIGHT = f"2018-{datetime.now().year}"
 PROJECT_URL = "https://github.com/johnsondnz/pre-commit-ansible-secrets"
 PROJECT_EMAIL = "donaldjohnsond.nz@gmail.com"
-PROJECT_VERSION = "1.0.4"
+PROJECT_VERSION = "1.0.5"
 
 REQUIRES = [
     "flake8==3.9.2",
@@ -35,7 +35,5 @@ setup(
     zip_safe=False,
     install_requires=REQUIRES,
     python_requires=">=3.5",
-    entry_points={
-        "console_scripts": ["coding-standards = hooks.coding_standards:main"]
-    },
+    entry_points={"console_scripts": ["coding-standards = hooks.coding_standards:main"]},
 )
