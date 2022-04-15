@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -e
-
-echo "==> Configure pre-commit"
-pre-commit install --install-hooks
-
-[ -s ./.devcontainer/pip-requirements.txt ] && echo "==> Install pip packages" && \
-pip3 install --no-cache-dir -r ./.devcontainer/pip-requirements.txt || echo "==> No additional packages to install"

@@ -2,7 +2,7 @@
 - id: coding-standards
   name: Coding Standards
   description: Run consistency checks against coding standards
-  entry: coding-standards.py
+  entry: coding-standards
   language: python
   always_run: true
   pass_filenames: false

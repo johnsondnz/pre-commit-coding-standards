@@ -1,0 +1,3 @@
+[console_scripts]
+coding-standards = hooks.coding_standards:main
+
