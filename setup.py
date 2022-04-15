@@ -35,5 +35,7 @@ setup(
     zip_safe=False,
     install_requires=REQUIRES,
     python_requires=">=3.5",
-    entry_points={"console_scripts": ["coding-standards = hooks.coding_standards:main"]},
+    entry_points={
+        "console_scripts": ["coding-standards = hooks.coding_standards:main"]
+    },
 )
