@@ -1,4 +1,6 @@
 ---
+default_stages: [commit, push, manual]
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
@@ -35,7 +37,7 @@ repos:
       - id: flake8
         name: flake8 (PEP8 Checker)
 
-  - repo: git@github.com:johnsondnz/pre-commit-coding-standards.git
-    rev: 1.2.11
-    hooks:
-      - id: coding-standards
+  # - repo: git@github.com:johnsondnz/pre-commit-coding-standards.git
+  #   rev: v1.0.0
+  #   hooks:
+  #     - id: coding-standards

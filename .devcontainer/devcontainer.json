@@ -1,15 +1,15 @@
 {
-    "image": "registry.gitlab.com/computerconceptslimited/ccl.containers/pre_commit:dev.latest",
-    "containerUser": "cclops",
-    "remoteUser": "cclops",
-    "updateRemoteUserUID": true,
+    "image": "ghcr.io/johnsondnz/container-images/devcontainer:latest",
     "extensions": [
-        "gitlab.gitlab-workflow",
+        "github.vscode-pull-request-github",
         "ms-python.python",
         "redhat.vscode-yaml",
+        "wholroyd.jinja",
         "hashicorp.terraform",
         "4ops.packer",
         "visualstudioexptteam.vscodeintellicode",
+        "ms-python.vscode-pylance",
+        "redhat.ansible",
         "ms-vsliveshare.vsliveshare",
         "vscode-icons-team.vscode-icons",
         "donjayamanne.githistory",
@@ -17,15 +17,29 @@
         "mhutchie.git-graph",
         "waderyan.gitblame"
     ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "python.formatting.provider": "black",
+        "python.formatting.blackArgs": [
+            "-l 119"
+        ],
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": [
+            "\"--ignore=E501,E722\""
+        ],
+        "yaml.format.printWidth": 119
+    },
     "runArgs": [
         "-v",
-        "${localEnv:HOME}/.ssh:/home/cclops/.ssh:ro",
+        "${localEnv:HOME}/.ssh:/home/generic/.ssh:ro",
         "-v",
-        "${localEnv:HOME}/.gnupg/private-keys-v1.d:/home/cclops/.gnupg/private-keys-v1.d:ro",
+        "${localEnv:HOME}/.gitconfig:/home/generic/.gitconfig:ro",
         "-v",
-        "${localEnv:HOME}/.gnupg/pubring.kbx:/home/cclops/.gnupg/pubring.kbx:ro",
+        "${localEnv:HOME}/.gnupg/private-keys-v1.d:/home/generic/.gnupg/private-keys-v1.d:ro",
         "-v",
-        "${localEnv:HOME}/.gnupg/trustdb.gpg:/home/cclops/.gnupg/trustdb.gpg:ro"
+        "${localEnv:HOME}/.gnupg/pubring.kbx:/home/generic/.gnupg/pubring.kbx:ro",
+        "-v",
+        "${localEnv:HOME}/.gnupg/trustdb.gpg:/home/generic/.gnupg/trustdb.gpg:ro"
     ],
     "postCreateCommand": ".devcontainer/entrypoint.sh"
 }

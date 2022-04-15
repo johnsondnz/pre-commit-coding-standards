@@ -1,16 +1,10 @@
-#!/bin/bash
-
 set -e
+PATH=$PATH:~/.local/bin
 
-echo "==> Configure pre-commit"
-pre-commit install --install-hooks
-
-[ -s ./.devcontainer/pip-requirements.txt ] && echo "==> Install pip packages" && pip3 install --no-cache-dir -r ./.devcontainer/pip-requirements.txt || echo "==> No additional packages to install"
-
-echo "==> Clone ansible-prod" 
-sudo chown cclops:cclops /workspaces
-git clone git@github.com:ComputerConceptsLimited/ansible-prod.git /workspaces/ansible-prod
-
-echo "==> Prevent push to ansible-prod"
-echo "==> Can still commit and test"
-mv /workspaces/ansible-prod/.git/config /workspaces/ansible-prod/.git/config.bak
+[ -s .pre-commit-config.yaml ] && echo "Configure pre-commit..." && pre-commit install --install-hooks || echo "==> No pre-commit to install"
+[ -s ./.devcontainer/pip-requirements.txt ] && echo "==> Install pip packages..." && pip3 install --no-cache-dir -r ./.devcontainer/pip-requirements.txt || echo "==> No additional pip packages to install"
+[ -s ./.devcontainer/apt-requirements.txt ] && echo "==> Install apt packages..." && sudo apt update && sudo xargs apt-get install -y <./.devcontainer/apt-requirements.txt || echo "==> No additional apt packages to install"
+sudo chown generic:generic /home/generic/.gnupg && echo "==> Set permissions on gnupg..." || echo "==> No permissions to set on gnupg"
+sudo chmod 666 /var/run/docker.sock && echo "==> Set permissions on docker socket..." || echo "==> Docker socket not mounted, use -v option to mount"
+[ -s ./.devcontainer/.password ] && echo "==> Logging into ghcr.io..." && cat ./.devcontainer/.password | docker login ghcr.io --username johnsondnz --password-stdin || echo "==> ghcr.io password not found"
+zsh
