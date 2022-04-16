@@ -276,3 +276,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/python,ansible,sublimetext,visualstudiocode,linux,windows,macos
+
+# Secret things
+.password*
+.vault*
+.secret*
