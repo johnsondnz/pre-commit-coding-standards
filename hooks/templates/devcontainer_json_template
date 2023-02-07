@@ -15,7 +15,8 @@
         "donjayamanne.githistory",
         "eamodio.gitlens",
         "mhutchie.git-graph",
-        "waderyan.gitblame"
+        "waderyan.gitblame",
+        "GitLab.gitlab-workflow"
     ],
     "settings": {
         "editor.formatOnSave": true,
