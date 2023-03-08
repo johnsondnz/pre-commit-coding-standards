@@ -13,7 +13,7 @@ PROJECT_AUTHOR = "@johnsondnz"
 PROJECT_COPYRIGHT = f"2018-{datetime.now().year}"
 PROJECT_URL = "https://github.com/johnsondnz/pre-commit-coding-standards"
 PROJECT_EMAIL = "donaldjohnsond.nz@gmail.com"
-PROJECT_VERSION = "1.1.3"
+PROJECT_VERSION = "1.1.4"
 
 REQUIRES = [
     "flake8==3.9.2",
