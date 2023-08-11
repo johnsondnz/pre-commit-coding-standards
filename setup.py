@@ -21,7 +21,7 @@ REQUIRES = [
     "typing",
     "PyYAML>=5.1.2",
     "black==21.9b0",
-    "GitPython==3.1.30",
+    "GitPython==3.1.32",
 ]
 
 setup(
